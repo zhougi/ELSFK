@@ -78,15 +78,153 @@
 	exportControl 	"Public"
 	global     	TRUE
 	logical_models 	(list unit_reference_list
+	    (object Class "使用者"
+		quid       	"5EBE6251028F"
+		stereotype 	"Actor")
 	    (object Mechanism @1
 		logical_models 	(list unit_reference_list
-		    (object Object "$UNNAMED$0"
+		    (object Object "FormMain"
 			quid       	"5EBE466C03E1"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE65400063"
+				supplier   	"SaveOrOpen"
+				quidu      	"5EBE6393017F"
+				messages   	(list Messages
+				    (object Message "Directory"
+					quid       	"5EBE66B40165"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5EBE6544028C"
+				supplier   	"Game"
+				quidu      	"5EBE63F20245"
+				messages   	(list Messages
+				    (object Message "Start()"
+					quid       	"5EBE675F03C7"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"3"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE))))
 			persistence 	"Transient"
 			creationObj 	FALSE
 			multi      	FALSE)
-		    (object Object "$UNNAMED$1"
-			quid       	"5EBE466F03AB"
+		    (object Object "$UNNAMED$0"
+			quid       	"5EBE625B03DA"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE652F03CD"
+				supplier   	"FormMain"
+				quidu      	"5EBE466C03E1"
+				messages   	(list Messages
+				    (object Message ""
+					quid       	"5EBE65340340"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Use Case View::使用者"
+			quidu      	"5EBE6251028F"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "SaveOrOpen"
+			quid       	"5EBE6393017F"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "Game"
+			quid       	"5EBE63F20245"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE654D02A3"
+				supplier   	"Shape"
+				quidu      	"5EBE63F601E9"
+				messages   	(list Messages
+				    (object Message "Shape()"
+					quid       	"5EBE67E901C6"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"7"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "Shape"
+			quid       	"5EBE63F601E9"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE65B903D8"
+				supplier   	"MoveAndRotate"
+				quidu      	"5EBE646903C8"
+				messages   	(list Messages
+				    (object Message "CanMove()"
+					quid       	"5EBE67DA0280"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"5"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "ScanFullLines"
+			quid       	"5EBE646502B1"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE65C40225"
+				supplier   	"Shape"
+				quidu      	"5EBE63F601E9"
+				messages   	(list Messages
+				    (object Message "Shape()"
+					quid       	"5EBE67DF021D"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"6"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "MoveAndRotate"
+			quid       	"5EBE646903C8"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"5EBE65C10005"
+				supplier   	"ScanFullLines"
+				quidu      	"5EBE646502B1"
+				messages   	(list Messages
+				    (object Message "IsGameOver()"
+					quid       	"5EBE67B90220"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"5EBE662A005E"
+				supplier   	"MoveAndRotate"
+				quidu      	"5EBE646903C8"))
 			persistence 	"Transient"
 			creationObj 	FALSE
 			multi      	FALSE))))
@@ -107,11 +245,11 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	0
+		origin_x   	1538
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ObjectView "$UNNAMED$0" @2
-			location   	(253, 209)
+		    (object ObjectView "FormMain" @2
+			location   	(916, 606)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -121,18 +259,27 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(781, 556)
+			    fill_color 	16777215
+			    nlines     	2
+			    max_width  	270
+			    justify    	0
+			    label      	"FormMain")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5EBE466C03E1"
-			height     	112
+			width      	288
+			height     	125
 			annotation 	4
 			autoResize 	TRUE
 			subobjects 	0
 			x_offset   	0.000000
 			y_offset   	0.000000)
-		    (object ClassInstanceView "$UNNAMED$1" @3
-			location   	(994, 259)
+		    (object ObjectView "$UNNAMED$0" @3
+			location   	(917, 153)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -142,12 +289,533 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(917, 313)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	331
+			    justify    	0
+			    label      	"")
+			icon       	"Actor"
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
-			quidu      	"5EBE466F03AB"
-			height     	112
-			autoResize 	TRUE)))))
+			quidu      	"5EBE625B03DA"
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "SaveOrOpen" @4
+			location   	(191, 787)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
+			    location   	(63, 734)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	257
+			    justify    	0
+			    label      	"SaveOrOpen")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5EBE6393017F"
+			width      	275
+			height     	131
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "Game" @5
+			location   	(1478, 746)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@5
+			    location   	(1397, 695)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	162
+			    justify    	0
+			    label      	"Game")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5EBE63F20245"
+			height     	126
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "Shape" @6
+			location   	(1431, 1131)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1350, 1080)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	162
+			    justify    	0
+			    label      	"Shape")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5EBE63F601E9"
+			height     	126
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "ScanFullLines" @7
+			location   	(875, 1431)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@7
+			    location   	(719, 1381)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	313
+			    justify    	0
+			    label      	"ScanFullLines")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5EBE646502B1"
+			width      	331
+			height     	125
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object ObjectView "MoveAndRotate" @8
+			location   	(2162, 1412)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(1959, 1362)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	407
+			    justify    	0
+			    label      	"MoveAndRotate")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5EBE646903C8"
+			width      	425
+			height     	125
+			annotation 	4
+			autoResize 	TRUE
+			subobjects 	0
+			x_offset   	0.000000
+			y_offset   	0.000000)
+		    (object LinkSelfView "" @9
+			location   	(2162, 1200)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE662A005E"
+			client     	@8
+			supplier   	@8
+			vertices   	(list Points
+			    (2105, 1350)
+			    (2219, 1350))
+			line_style 	4)
+		    (object LinkView "" @10
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE65400063"
+			client     	@2
+			supplier   	@4
+			vertices   	(list Points
+			    (771, 640)
+			    (328, 751))
+			line_style 	0)
+		    (object MessView "" @11
+			location   	(551, 742)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @12
+			    Parent_View 	@11
+			    location   	(562, 786)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE66B40165"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	213
+			    justify    	0
+			    label      	"Directory"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@10
+			pctDist    	0.523254
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(608, 727)
+			terminus   	(494, 757))
+		    (object LinkView "" @13
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE6544028C"
+			client     	@2
+			supplier   	@5
+			vertices   	(list Points
+			    (1060, 642)
+			    (1387, 722))
+			line_style 	0)
+		    (object MessView "" @14
+			location   	(1229, 638)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @15
+			    Parent_View 	@14
+			    location   	(1239, 595)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE675F03C7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	153
+			    justify    	0
+			    label      	"Start()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@13
+			pctDist    	0.482842
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1171, 624)
+			terminus   	(1287, 652))
+		    (object LinkView "" @16
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE652F03CD"
+			client     	@3
+			supplier   	@2
+			vertices   	(list Points
+			    (915, 231)
+			    (916, 543))
+			line_style 	0)
+		    (object MessView "" @17
+			location   	(961, 421)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @18
+			    Parent_View 	@17
+			    location   	(1006, 421)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE65340340"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	""
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@16
+			pctDist    	0.613014
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(961, 361)
+			terminus   	(961, 481))
+		    (object LinkView "" @19
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE654D02A3"
+			client     	@5
+			supplier   	@6
+			vertices   	(list Points
+			    (1469, 809)
+			    (1437, 1067))
+			line_style 	0)
+		    (object MessView "" @20
+			location   	(1498, 942)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @21
+			    Parent_View 	@20
+			    location   	(1543, 946)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE67E901C6"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	191
+			    justify    	0
+			    label      	"Shape()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@19
+			pctDist    	0.496686
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1504, 882)
+			terminus   	(1492, 1002))
+		    (object LinkView "" @22
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE65B903D8"
+			client     	@6
+			supplier   	@8
+			vertices   	(list Points
+			    (1521, 1165)
+			    (2002, 1349))
+			line_style 	0)
+		    (object MessView "" @23
+			location   	(1715, 1192)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @24
+			    Parent_View 	@23
+			    location   	(1731, 1151)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE67DA0280"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	231
+			    justify    	0
+			    label      	"CanMove()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@22
+			pctDist    	0.372239
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1659, 1171)
+			terminus   	(1771, 1213))
+		    (object LinkView "" @25
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE65C40225"
+			client     	@7
+			supplier   	@6
+			vertices   	(list Points
+			    (988, 1368)
+			    (1340, 1178))
+			line_style 	0)
+		    (object MessView "" @26
+			location   	(1148, 1232)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @27
+			    Parent_View 	@26
+			    location   	(1129, 1193)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE67DF021D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	181
+			    justify    	0
+			    label      	"Shape()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@25
+			pctDist    	0.514425
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1095, 1259)
+			terminus   	(1201, 1205))
+		    (object LinkView "" @28
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5EBE65C10005"
+			client     	@8
+			supplier   	@7
+			vertices   	(list Points
+			    (1949, 1414)
+			    (1040, 1427))
+			line_style 	0)
+		    (object MessView "" @29
+			location   	(1462, 1466)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			line_color 	3342489
+			label      	(object SegLabel @30
+			    Parent_View 	@29
+			    location   	(1463, 1511)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"5EBE67B90220"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	284
+			    justify    	0
+			    label      	"IsGameOver()"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			object_arc 	@28
+			pctDist    	0.537922
+			height     	45
+			orientation 	0
+			dir        	1
+			origin     	(1521, 1465)
+			terminus   	(1403, 1467))))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"5EBE3E2B0392"
 	exportControl 	"Public"
